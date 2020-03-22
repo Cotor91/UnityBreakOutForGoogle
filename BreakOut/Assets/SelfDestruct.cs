@@ -9,7 +9,9 @@ public class SelfDestruct : MonoBehaviour {
     // Use this for initialization
     void Start() {
         gameObject.tag = "Block Piece";
-            }
+        gameObject.transform.localScale = new Vector3(11, 22, 1);
+        transform.Rotate(0, 0, 90);
+    }
 
 
     // Update is called once per frame

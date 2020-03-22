@@ -25,6 +25,7 @@ public class BallFunctions : MonoBehaviour
 
     // Use this for initialization
     void Start () {
+        gameObject.transform.localScale = new Vector3(2, 2);
         plankPiece = GameObject.Find("PlankPiece");
         blockPiece = GameObject.Find("BlockPiece");
         scoreCount = GameObject.Find("Score");
@@ -64,8 +65,9 @@ public class BallFunctions : MonoBehaviour
             {
                 bouncing = true;
             }
-            invertBounce = invertBounce - 1;
-            checkIt = Random.Range(-24, 24);
+            invertBounce = GameObject.FindGameObjectsWithTag("Block Piece").Length;
+
+                checkIt = Random.Range(-24, 24);
         }
 
 
@@ -115,4 +117,3 @@ public class BallFunctions : MonoBehaviour
 
 }
 
-// this.transform.position.x > plankPiece.transform.position.x + leftEdge && this.transform.position.x < plankPiece.transform.position.x + rightEdge && //

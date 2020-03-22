@@ -12,11 +12,31 @@ public class ScoreHolder : MonoBehaviour
     Text pointsScored;
     public float lives;
     public GameObject spherePiece;
+    public GameObject prefabBlockPieces;
 
 
     // Use this for initialization
     void Start()
     {
+        float xSpawn;
+        float ySpawn;
+
+        for (int j = 0; j < 8; j++)
+        {
+            xSpawn = j * 30 - 105;
+
+            for (int i = 0; i < 8; i++)
+            {
+                ySpawn = i * -7.5f + 39.8f;
+
+                prefabBlockPieces = Instantiate(Resources.Load("BlockPiece"), new Vector3(xSpawn, ySpawn, 0), Quaternion.identity) as GameObject;
+            }
+        }
+ 
+
+        
+
+
         pointsScored = GetComponent<Text>();
         spherePiece = GameObject.Find("SpherePiece");
         lives = 5;

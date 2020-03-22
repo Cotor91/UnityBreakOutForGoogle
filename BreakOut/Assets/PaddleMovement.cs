@@ -9,7 +9,7 @@ public class PaddleMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        gameObject.transform.localScale = new Vector3(2, 2);
     }
 
     // Update is called once per frame
